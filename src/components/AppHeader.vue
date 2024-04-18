@@ -1,7 +1,14 @@
 <script>
-  export default {
-      name: 'AppHeader'
-  }
+import { store } from "../store.js";
+
+export default {
+    name: 'AppHeader',
+    data() {
+          return {
+            store
+          };
+        }
+}
 </script>
 
 <template>
@@ -10,8 +17,8 @@
         <h1>BOOLFLIX</h1>
       </div>
       <div class="input-field">
-        <input type="text" name="search">
-        <button>Search</button>
+        <input type="text" name="search" v-model="store.searchInput">
+        <button @click="$emit('searchRequest')">Search</button>
       </div>
     </header>
 </template>

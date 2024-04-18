@@ -21,7 +21,7 @@
 
         const queryParams = {
           api_key: store.apiKey,
-          query: 'stellari'
+          query: store.searchInput
         };
           
         axios.get('https://api.themoviedb.org/3/search/movie', {
@@ -33,15 +33,11 @@
 
       }
     }
-    ,
-    mounted() {
-      this.getMoviesFromApi();
-    }
   }
 </script>
 
 <template>
-<AppHeader></AppHeader>
+<AppHeader @searchRequest="getMoviesFromApi"></AppHeader>
 
 <main>
   <ContentList></ContentList>

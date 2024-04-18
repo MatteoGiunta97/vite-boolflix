@@ -17,13 +17,27 @@
     }
     ,
     methods: {
-      
+      getMoviesFromApi() {
+
+        const queryParams = {
+          api_key: '7b61ce1d470acbd4169189413ce5efa0',
+          query: 'stellari'
+        };
+          
+        axios.get('https://api.themoviedb.org/3/search/movie', {
+          params: queryParams
+        }).
+        then((response) => {
+          store.movies = response.data.results;
+        });
+
+      }
     }
     ,
     mounted() {
-
+      this.getMoviesFromApi();
     }
-    }
+  }
 </script>
 
 <template>

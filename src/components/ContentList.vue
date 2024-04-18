@@ -22,6 +22,8 @@
     <div class="container">
       <div class="cards-list">
         <Card></Card>
+        <Card></Card>
+        <Card></Card>
       </div>
     </div>
   </section>
@@ -37,7 +39,6 @@
 
     .cards-list {
         display: flex;
-        flex-wrap: wrap;
     }
 }
 </style>

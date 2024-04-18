@@ -9,7 +9,11 @@
     <div class="card">
         <div class="info-wrapper">
             <div class="info">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit molestias voluptatum asperiores enim accusamus, illum ipsam quibusdam adipisci quos commodi fuga tempora saepe quis beatae magnam hic iusto quas perspiciatis?</p>
+                    <h3>Title:</h3>
+                    <h3>Original Title:</h3>
+                    <h3>Rating:</h3>
+                    <h3>Overview:</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dicta neque sint explicabo accusantium sit blanditiis! Expedita, ab quibusdam a reiciendis accusantium nam suscipit reprehenderit accusamus asperiores mollitia, nostrum velit!</p>
             </div>
         </div>
     </div>
@@ -20,7 +24,7 @@
 
 .card {
     width: calc(100% / 3);
-    padding: 10px;
+    padding: 15px 25px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -31,9 +35,11 @@
         padding: 10px;
         width: 100%;
         height: 100%;
+        padding: 35px 15px;
 
-        p {
+        .info {
             color:white;
+            text-align: left;
         }
     }
 }

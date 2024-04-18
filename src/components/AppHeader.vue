@@ -10,7 +10,8 @@
         <h1>BOOLFLIX</h1>
       </div>
       <div class="input-field">
-        <input type="text">
+        <input type="text" name="search">
+        <button>Search</button>
       </div>
     </header>
 </template>

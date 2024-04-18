@@ -27,7 +27,11 @@
 </script>
 
 <template>
+<AppHeader></AppHeader>
 
+<main>
+  <ContentList></ContentList>
+</main>
 </template>
 
 <style lang="scss">

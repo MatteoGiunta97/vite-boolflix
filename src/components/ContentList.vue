@@ -21,9 +21,7 @@
   <section class="cards-wrapper">
     <div class="container">
       <div class="cards-list">
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+        <Card v-for="movie in store.movies"></Card>
       </div>
     </div>
   </section>
@@ -35,10 +33,11 @@
 .cards-wrapper {
   background-color: grey;
   padding: 20px;
-  height: calc(100vh - 80px);
+  height: 100%;
 
     .cards-list {
         display: flex;
+        flex-wrap: wrap;
     }
 }
 </style>

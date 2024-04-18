@@ -20,7 +20,7 @@
       getMoviesFromApi() {
 
         const queryParams = {
-          api_key: '7b61ce1d470acbd4169189413ce5efa0',
+          api_key: store.apiKey,
           query: 'stellari'
         };
           

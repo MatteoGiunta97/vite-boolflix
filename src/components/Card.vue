@@ -1,6 +1,9 @@
 <script>
   export default {
       name: 'Card',
+      props: {
+        cardData: Object
+      }
   }
 </script>
 
@@ -9,11 +12,10 @@
     <div class="card">
         <div class="info-wrapper">
             <div class="info">
-                    <h3>Title:</h3>
-                    <h3>Original Title:</h3>
-                    <h3>Rating:</h3>
-                    <h3>Overview:</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dicta neque sint explicabo accusantium sit blanditiis! Expedita, ab quibusdam a reiciendis accusantium nam suscipit reprehenderit accusamus asperiores mollitia, nostrum velit!</p>
+                    <h3>Title:</h3><span>{{ cardData.title }}</span>
+                    <h3>Original Title:</h3><span>{{ cardData.original_title }}</span>
+                    <h3>Language:</h3><span>{{ cardData.original_language }}</span>
+                    <h3>Rating:</h3><span>{{ cardData.vote_average }}</span>
             </div>
         </div>
     </div>
@@ -40,6 +42,10 @@
         .info {
             color:white;
             text-align: left;
+
+                h3 {
+                    margin-top: 10px;
+                }
         }
     }
 }

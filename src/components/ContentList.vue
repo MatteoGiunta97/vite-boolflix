@@ -13,7 +13,7 @@
             store
           };
         }
-  }
+    }
 </script>
 
 <template>
@@ -21,7 +21,7 @@
   <section class="cards-wrapper">
     <div class="container">
       <div class="cards-list">
-        <Card v-for="movie in store.movies"></Card>
+        <Card v-for="movie in store.movies" :key="movie.id" :cardData="movie"></Card>
       </div>
     </div>
   </section>

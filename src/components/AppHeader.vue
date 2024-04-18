@@ -26,11 +26,11 @@ header {
   justify-content: space-between;
   align-items: center;
   
- .logo {
-    text-align: left;
-    display: flex;
-    color: red;
- }
+    .logo {
+        text-align: left;
+        display: flex;
+        color: red;
+    }
 }
 
 </style>

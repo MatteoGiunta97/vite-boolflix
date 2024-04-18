@@ -33,6 +33,7 @@
 .cards-wrapper {
   background-color: grey;
   padding: 20px;
+  height: calc(100vh - 80px);
 
     .cards-list {
         display: flex;

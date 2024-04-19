@@ -4,6 +4,27 @@
         props: {
             cardData: Object
         }
+        ,
+        data() {
+            return {
+                supportedFlags: [
+                    'en',
+                    'it',
+                    'fr',
+                    'ja',
+                    'es',
+                    'de'
+                ]
+            };
+        }
+        ,
+        methods: {
+            getFlagUrl() {
+                let flagImageName = this.cardData.original_language + '.jpg';
+
+                return new URL(`../assets/img/${flagImageName}`, import.meta.url).href;
+            }
+        }
     }
 </script>
 
@@ -12,31 +33,20 @@
     <div class="card">
         <div class="info-wrapper">
             <div class="info">
-                <h3>Title:</h3><span>{{ cardData.title }}</span>
-                <h3>Original Title:</h3><span>{{ cardData.original_title }}</span>
+                <h3>Title:</h3>
+                <span>{{ cardData.title ? cardData.title : cardData.name }}</span>
+
+                <h3>Original Title:</h3>
+                <span>{{ cardData.original_title ? cardData.original_title : cardData.original_name }}</span>
+                
                 <h3>Language:</h3>
-                <div v-if="cardData.original_language === 'en'">
-                    <img src="../img/lang_eng.jpg">
+                <div>
+                    <img v-if="supportedFlags.includes(cardData.original_language)" :src="getFlagUrl()">
+                    <span v-else>{{ cardData.original_language }}</span>
                 </div>
-                <div v-else-if="cardData.original_language === 'it'">
-                    <img src="../img/lang_ita.jpg">
-                </div>
-                <div v-else-if="cardData.original_language === 'fr'">
-                    <img src="../img/lang_fre.jpg">
-                </div>
-                <div v-else-if="cardData.original_language === 'es'">
-                    <img src="../img/lang_spa.jpg">
-                </div>
-                <div v-else-if="cardData.original_language === 'de'">
-                    <img src="../img/lang_ger.jpg">
-                </div>
-                <div v-else-if="cardData.original_language === 'ja'">
-                    <img src="../img/lang_jap.jpg">
-                </div>
-                <div v-else>
-                    <span>{{ cardData.original_language }}</span>
-                </div>
-                <h3>Rating:</h3><span>{{ cardData.vote_average }}</span>
+
+                <h3>Rating:</h3>
+                <span>{{ cardData.vote_average }}</span>
             </div>
         </div>
     </div>

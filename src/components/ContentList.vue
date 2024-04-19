@@ -20,8 +20,15 @@
   
   <section class="cards-wrapper">
     <div class="container">
+      <h2>MOVIES:</h2>
+      <hr>
       <div class="cards-list">
         <Card v-for="movie in store.movies" :key="movie.id" :cardData="movie"></Card>
+      </div>
+      <h2>TV-SERIES:</h2>
+      <hr>
+      <div class="cards-list">
+        <Card v-for="series in store.tvSeries" :key="series.id" :cardData="series"></Card>
       </div>
     </div>
   </section>
@@ -36,8 +43,15 @@
   height: 100%;
 
     .cards-list {
-        display: flex;
-        flex-wrap: wrap;
+      display: flex;
+      flex-wrap: wrap;
+
+    }
+
+    hr {
+      background-color: red;
+      padding: 3px 0;
+      border: 2px solid black;
     }
 }
 </style>

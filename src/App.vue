@@ -31,6 +31,13 @@
           store.movies = response.data.results;
         });
 
+        axios.get('https://api.themoviedb.org/3/search/tv', {
+          params: queryParams
+        }).
+        then((response) => {
+          store.tvSeries = response.data.results;
+        });
+
       }
     }
   }
